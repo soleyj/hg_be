@@ -20,5 +20,5 @@ from mqtt import mqtt_main
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashboard.urls')),
-
+    path('rest-auth/', include('rest_auth.urls')),
 ]
