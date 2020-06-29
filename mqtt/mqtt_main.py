@@ -35,7 +35,8 @@ def on_disconnect(client, userdata, rc):
         print("Disconnected")
 
 
-broker_address = "192.168.1.46"
+# broker_address = "192.168.1.46"
+broker_address = "localhost"
 client = mqtt.Client("wb")  # create new instance
 client.connect(broker_address)  # connect to broker
 client.on_message = on_message  # attach function to callback

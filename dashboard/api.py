@@ -10,13 +10,12 @@ from rest_framework.views import APIView
 ##Sensor viewset
 class MachineDataViewSet(viewsets.ModelViewSet):
     queryset = data_hg.objects.all()
-    permission_classes =[
-        permissions.AllowAny
-    ]
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
     
     serializer_class = MachineDataSerializer
     filter_fields = ('machine__id_machine',)  
-
+    
     @action(methods = ['get'],detail= False)
     def newest(self,request):
         newest = self.get_queryset().order_by('id').last()
