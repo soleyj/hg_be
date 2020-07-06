@@ -11,6 +11,8 @@ constantly==15.1.0
 cryptography==2.9.2
 daphne==2.5.0
 Django==2.2.5
+django-rest-auth==0.9.5
+djangorestframework==3.11.0
 hyperlink==19.0.0
 idna==2.8
 incremental==17.5.0
@@ -27,6 +29,7 @@ pylint==2.4.2
 pyOpenSSL==19.1.0
 pytz==2019.2
 requests==2.22.0
+schedule==0.6.0
 selenium==3.141.0
 service-identity==18.1.0
 six==1.12.0
