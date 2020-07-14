@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt  # import the client1
 import json
 import schedule
 import time
-from dashboard.models import machine_hw,data_hg, data_hg_confgi
+from dashboard.models import machine_hw,data_hg, data_hg_confgi,data_hg_outputs
 from apscheduler.schedulers.background import BackgroundScheduler
 
 
@@ -21,7 +21,16 @@ def on_message(client, userdata, message):
         new_model.sw_2 = payload_json["sw_2"]
         new_model.save()
 
+        new_outs_model = data_hg_outputs()
+        new_outs_model.Ventilador =     payload_json["out_12"][0]
+        new_outs_model.Bomba_1 =     payload_json["out_12"][1]
+        new_outs_model.Bomba_2 =     payload_json["out_12"][2]
+        new_outs_model.Bomba_3 =     payload_json["out_12"][3]
+        new_outs_model.Bomba_3 =     payload_json["rele"][0]
+        new_outs_model.Bomba_h20 =     payload_json["rele"][1]
+        new_outs_model.save()
         pass
+
 
 def on_connect(client, userdata, flags, rc):
     client.subscribe("homegrown/inputs")
