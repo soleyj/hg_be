@@ -9,8 +9,8 @@ class machine_hw(models.Model):
 
 
 class data_hg(models.Model):
-    temp_1 = models.IntegerField()  # 1 generate 2 start , 4 stop , 3 finish
-    humid_1 = models.IntegerField()  # 1 generate 2 start , 4 stop , 3 finish
+    temp_1 = models.FloatField()  # 1 generate 2 start , 4 stop , 3 finish
+    humid_1 = models.FloatField()  # 1 generate 2 start , 4 stop , 3 finish
     sw_1 = models.IntegerField()  # 1 generate 2 start , 4 stop , 3 finish
     sw_2 = models.IntegerField()  # 1 generate 2 start , 4 stop , 3 finish
     machine = models.ForeignKey(
