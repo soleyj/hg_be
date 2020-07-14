@@ -41,6 +41,7 @@ class HgDataConfig(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)   
     serializer_class = ConfigSerializer
 
+
     @action(methods = ['get'],detail= False)
     def newest(self,request):
         newest = self.get_queryset().order_by('id').last()
