@@ -28,6 +28,8 @@ def on_message(client, userdata, message):
         new_outs_model.Bomba_3 =     payload_json["out_12"][3]
         new_outs_model.Bomba_3 =     payload_json["rele"][0]
         new_outs_model.Bomba_h20 =     payload_json["rele"][1]
+        new_model.machine = machine_hw.objects.get(id_machine = payload_json["id"])
+
         new_outs_model.save()
         pass
 
